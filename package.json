@@ -11,10 +11,14 @@
     "url": "git+https://github.com/andrewlopezcodes/miniStore.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "@andrewlopezcodes on Github and Instagram",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/andrewlopezcodes/miniStore/issues"
   },
-  "homepage": "https://github.com/andrewlopezcodes/miniStore#readme"
+  "homepage": "https://github.com/andrewlopezcodes/miniStore#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.3"
+  }
 }
