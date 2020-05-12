@@ -14,22 +14,17 @@ class UsersRepository {
     }
   }
   async getAll() {
-    // open the file called this.filename
-    const contents = await fs.promises.readFile(this.filename, {
+    // open the file called this.filename, reads the file, parses the JSON
+    return JSON.parse(await fs.promises.readFile(this.filename, {
       encoding: 'utf8'
-    });
-
-    // Read this.filename contents
-    console.log(contents);
-    // parse the contents
-
-    // Return the parsed data
+    }));
   }
 }
 
 const test = async () => {
   const repo = new UsersRepository('users.json');
-  await repo.getAll();
+  const users = await repo.getAll();
+  console.log(users);
 };
 
 test();
