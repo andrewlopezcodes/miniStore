@@ -77,6 +77,8 @@ class UsersRepository {
         return record;
       }
     }
-
   }
 }
+
+
+module.exports = new UsersRepository('users.json');
