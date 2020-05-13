@@ -14,7 +14,7 @@ app.use(cookieSession({
   keys: ['iaufbyoiac1q7bpbevaqupo765886.,m.,,ncv']
 }));
 
-app.get('/', (req, res) => {
+app.get('/signup', (req, res) => {
   res.send(`
     <div>
       Your Id is : ${req.session.userId}
@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.post('/', async (req, res) => {
+app.post('/signup', async (req, res) => {
   const {
     email,
     password,
