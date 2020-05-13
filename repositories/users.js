@@ -61,7 +61,7 @@ class UsersRepository {
     await this.writeAll(records);
   }
 
-  async getOneBy(filter) {
+  async getFiltered(filter) {
     const records = await this.getAll();
 
     for (let record of records) {
@@ -80,14 +80,3 @@ class UsersRepository {
 
   }
 }
-
-const test = async () => {
-  const repo = new UsersRepository('users.json');
-  const user = await repo.getOneBy({
-    password: 'cupidshuffle',
-    email: 'happy@happy.com'
-  });
-  console.log(user);
-};
-
-test();
