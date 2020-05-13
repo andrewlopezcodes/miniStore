@@ -73,7 +73,27 @@ app.get('/signin', (req, res) => {
   `)
 });
 
-app.post('/signin', (req, res) => {
+app.post('/signin', async (req, res) => {
+  const {
+    email,
+    password
+  } = req.body;
+
+  const user = await usersRepository.getFiltered({
+    email: email
+  });
+
+  if (!user) {
+    return res.send('Check your information again!');
+  }
+
+  if (user.password !== password) {
+    return res.send('Check your information again!');
+  }
+
+  req.session.userId = user.id;
+
+  res.send("Welcome")
 
 });
 
