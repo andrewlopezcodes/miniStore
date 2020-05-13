@@ -56,7 +56,26 @@ app.post('/signup', async (req, res) => {
   res.send('Account created!!')
 });
 
+app.get('/signout', (req, res) => {
+  req.session = null;
+  res.send('You are logged out.');
+});
 
+app.get('/signin', (req, res) => {
+  res.send(`
+  <div>
+  <form method="POST">
+    <input placeholder = "email" name="email" />
+    <input placeholder = "password" name="password" />
+    <button type="submit" >Sign In</button>
+  </form>
+</div>
+  `)
+});
+
+app.post('/signin', (req, res) => {
+
+});
 
 
 
